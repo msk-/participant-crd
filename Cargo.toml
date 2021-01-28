@@ -1,0 +1,22 @@
+[package]
+name = "participant-crd"
+version = "0.1.0"
+authors = ["msk- <mattkingston@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+kube = "0.48.0"
+serde = "1.0"
+serde_derive = "1.0"
+serde_json = "1.0"
+
+[dependencies.num]
+version = "0.3"
+features = ["serde"]
+
+# TODO: is this really the way to set features for a lib that we transitively depend on?
+[dependencies.k8s-openapi]
+features = ["v1_17"]
+version = "0.11.0"

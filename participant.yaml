@@ -1,0 +1,11 @@
+apiVersion: kubernetes.mojaloop.io/v1alpha1
+kind: Participant
+metadata:
+  name: payerfsp
+spec:
+  name: payerfsp
+  currencies:
+    - code: EUR
+      netDebitCap: 10000
+    - code: USD
+      netDebitCap: 5000
