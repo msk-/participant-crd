@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: participant-controller
+  labels:
+    app: participant-controller
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: participant-controller
+  template:
+    metadata:
+      labels:
+        app: participant-controller
+    spec:
+      containers:
+      - name: participant-controller
+        image: ghcr.io/partiallyordered/participant-crd:master
+        ports:
+        - containerPort: 80
